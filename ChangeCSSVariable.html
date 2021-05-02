@@ -55,5 +55,18 @@
         <input type="color" name="base" value="#ffdf00">
     </div>
     <img src="CssVariableBackground.jpg">
+
+    <script>
+        const inputs = document.querySelectorAll('.controller input');
+
+        function handUpdate() {
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+
+        inputs.forEach(input => input.addEventListener("change", handUpdate));
+        inputs.forEach(input => input.addEventListener("mousemove", handUpdate));
+
+    </script>
 </body>
 </html>
