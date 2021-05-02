@@ -5,16 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaging CSS Variables</title>
-    <script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            position: releative;
+            width: 100%;
+            height: 100%;
+        }
+        :root {
+            --spacing: 20px;
+            --blur: 1px;
+            --base: #ffdf00;
+        }
+        body {
+            background-color: #001B35;
+            color: white;
+            text-align: center;
+        }
+        .controller {
+            padding: 20px 0px;
+        }
+        img {
+            padding: var(--spacing);
+            background: var(--base);
+            filter: blur(var(--blur));
+            width: 55%;
+            height: 80%;
+        }
+        .jsHead {
+            color: var(--base);
+        }
 
 
-    </script>
+    </style>
 </head>
 <body>
-    <h2>Update CSS Variables with <span class="jsHead">JS</span></h2>
+    <h1>Update CSS Variables with <span class="jsHead">JS</span></h1>
     <div class="controller">
-        <label for="spacing">Spacing</label>
-        <input type="range" name="spacing" min="10" max="100" value="50" data-sizing="px">
+        <label for="spacing">Spacing: </label>
+        <input type="range" name="spacing" min="10" max="200" value="20" data-sizing="px">
+
+        <label for="blur">Blur: </label>
+        <input type="range" name="blur" min="0" max="30" value="1" data-sizing="px">
+
+        <label for="base">Base Color: </label>
+        <input type="color" name="base" value="#ffdf00">
     </div>
+    <img src="CssVariableBackground.jpg">
 </body>
 </html>
